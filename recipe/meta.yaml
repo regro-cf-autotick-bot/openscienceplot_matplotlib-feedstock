@@ -10,7 +10,7 @@ source:
   sha256: 0beb2d70dcee50308123383353683fe4c483728cf85bacb29923e890160d2b81
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script_env: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script: {{ PYTHON }} -m pip install . -vv
@@ -23,7 +23,7 @@ requirements:
   run:
     - python >=3
     - numpy
-    - matplotlib
+    - matplotlib-base
     - h5py
 
 test:
