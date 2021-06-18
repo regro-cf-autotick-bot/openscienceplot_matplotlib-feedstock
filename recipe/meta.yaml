@@ -1,5 +1,5 @@
 {% set name = "openscienceplot_matplotlib" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/tdegeus/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 0beb2d70dcee50308123383353683fe4c483728cf85bacb29923e890160d2b81
+  sha256: a8c50afcddd6702cd212f32b8c2f72627f825a273538e3a2cb4c8aeae2799b3b
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script_env: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script: {{ PYTHON }} -m pip install . -vv
