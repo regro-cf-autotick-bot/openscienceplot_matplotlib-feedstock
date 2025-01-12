@@ -10,18 +10,18 @@ source:
   sha256: 13fa19478f37175540940adf22ec143f89b58ba58f6f78508939c914c7d012c3
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script_env: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3
+    - python {{ python_min }}
     - pip
     - setuptools_scm
   run:
-    - python >=3
+    - python >={{ python_min }}
     - numpy
     - matplotlib-base
     - h5py
@@ -33,6 +33,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/tdegeus/{{ name }}
